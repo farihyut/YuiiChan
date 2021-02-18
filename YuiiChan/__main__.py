@@ -75,27 +75,26 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
-I am an Anime themed group management bot.
+Hoin {}, Watashi Wa Killua Desu! Watashi
+ Anime themed group management bot.
 You can find my list of available commands with /help.
 
-See [Basic Configuration Checklist](https://t.me/yuiichansupport/3654) on how to secure your group.
+Managed By [🐻](t.me/coiju)
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
-the things I can help you with.
-If you have any questions on how to use me, head over to @YuiiChanSupport
+Hoi! Watashi Wa Killua Desu.
+Kimi no namaewa?
+This is my help menu. Use it well, any problems? [help](t.me/itsukihelp)
 
 *Main* commands available:
- • /start: start the bot
- • /help: PM's you this message.
- • /help <module name>: PM's you info about that module.
- • /donate: information about how to donate!
- • /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
+ ⚔️/start: start the bot
+ ⚔️/help: PM's you this message.
+ ⚔️/help <module name>: PM's you info about that module.
+ ⚔️/donate: information about how to donate!
+ ⚔️/settings:
+   in PM: will send you your settings for all supported modules.
+    in a group: will redirect you to pm, with all that chat's settings.
 
 
 {}
@@ -105,7 +104,7 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-SAITAMA_IMG = "https://telegra.ph/file/69a84b4548087b06afef4.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/bf0f880de8c6eb08f284d.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 You can donate to the original writer of the Base code, Paul
@@ -212,7 +211,7 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Add Yui-Chan to your group",
+                                text="⚔️ Add Killua To Your Group ⚔️",
                                 url="t.me/{}?startgroup=true".format(
                                     context.bot.username
                                 ),
@@ -220,10 +219,10 @@ def start(update: Update, context: CallbackContext):
                         ],
                         [
                             InlineKeyboardButton(
-                                text="Support Group", url=f"t.me/{SUPPORT_CHAT}"
+                                text="⚔️Support Group⚔️", url=f"t.me/itsukihelp"
                             ),
                             InlineKeyboardButton(
-                                text="Source Code", url="github.com/rshero/YuiiChan"
+                                text="⚔️guide⚔️", url="https://t.me/HelpMeBotU/2"
                             ),
                         ],
                     ]
@@ -231,7 +230,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "Well I'm alive!\n<b>Working since:</b> <code>{}</code>".format(uptime),
+            "I Work Over\n<b>Working since:</b> <code>{}</code>".format(uptime),
             parse_mode=ParseMode.HTML,
         )
 
@@ -348,7 +347,7 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help",
+                            text="⚔️Help⚔️",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ]
@@ -369,7 +368,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="⚔️Back⚔️", callback_data="help_back")]]
             ),
         )
 
