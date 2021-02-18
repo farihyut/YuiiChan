@@ -28,7 +28,7 @@ def afk(update: Update, context: CallbackContext):
 
     sql.set_afk(update.effective_user.id, afk_time, reason)
     fname = update.effective_user.first_name
-    update.effective_message.reply_text("{} is now away!{}".format(fname, notice))
+    update.effective_message.reply_text("{} Sayonara {} San!".format(fname, notice))
 
 
 @run_async
@@ -46,14 +46,14 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "{} is here!",
-                "{} is back!",
-                "{} is now in the chat!",
-                "{} is awake!",
-                "{} is back online!",
-                "{} is finally here!",
-                "Welcome back! {}",
-                "Where is {}?\nIn the chat!",
+                "{} Baka Id Back",
+                "{} Pay Me 100$ Now!",
+                "{} Welcome Back Darling",
+                "{} Ohayou!",
+                "{} Wee Miss you darling",
+                "{} baka is finally here!",
+                "Hoi {}",
+                " {}?\nIn the chat!",
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -126,12 +126,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is afk since {}".format(fst_name, afk_since)
+            res = "{} Kare wa neta  {}".format(fst_name, afk_since)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is afk since {}\nReason: {}".format(
+            res = "{} Kare wa neta{}\nReason: {}".format(
                 fst_name, afk_since, user.reason
             )
             update.effective_message.reply_text(res)
